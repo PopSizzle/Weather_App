@@ -41,6 +41,42 @@
   top: 100px;
   left: 400px;
   width: 60%;
+  height: 60%;
+}
+
+.card{
+  width: 100px;
+  height: 125px;
+}
+
+#card1 {
+  position: fixed;
+  bottom: 0px;
+  right: 750px;
+}
+
+#card2 {
+  position: fixed;
+  bottom: 0px;
+  right: 625px;
+}
+
+#card3 {
+  position: fixed;
+  bottom: 0px;
+  right: 500px;
+}
+
+#card4 {
+  position: fixed;
+  bottom: 0px;
+  right: 375px;
+}
+
+#card5 {
+  position: fixed;
+  bottom: 0px;
+  right: 250px;
 }
 
 .dataBox {

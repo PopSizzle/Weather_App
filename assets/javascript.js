@@ -6,6 +6,8 @@ var cityName;
 
 renderHistory()
 
+$("#currentDate").text(moment().format("dddd, MMMM Do YYYY"));
+
 function citySearch(event){
 
     var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=7fc7f03995684de46975fc5859c4770c"
