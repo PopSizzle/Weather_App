@@ -1,31 +1,54 @@
 .navbar .navbar-nav {
-    display: inline-block;
-    float: none;
-    vertical-align: top;
-  }
+  display: inline-block;
+  float: none;
+    ertical-align: top;
+}
   
-  .navbar .navbar-collapse {
-    text-align: center;
-  }
+.navbar .navbar-collapse {
+  text-align: center;
+}
 
-  #searchBox {
-    position: fixed;
-    top: 100px;
-    display: inline-block;
-  }
+#bigHeader{
+  position: relative;
+  left: 40%;
+}
 
-  #searchButton {
-    background-color: blue;
-    color: white;
-  }
+#searchBox {
+  position: fixed;
+  top: 100px;
+  display: inline-block;
+}
 
+#searchButton {
+  background-color: blue;
+  color: white;
+}
+
+.jumbotron {
+  display: inline;
+  position: fixed;
+  top: 100px;
+  left: 400px;
+  width: 60%;
+}
+
+.dataBox {
+  padding: 10px;
+}
+
+#UVBox {
+  width: 40px;
+}
+
+@media only screen and (max-width: 800px) {
   .jumbotron {
-    display: inline-block;
-    position: fixed;
-    top: 100px;
-    left: 400px;
+    display: block;
+    position: relative;
+    left: 0;
+    width: 100%;
   }
 
-  .dataBox {
-    padding: 10px;
+  #bigHeader {
+    left: 100px;
   }
+}
