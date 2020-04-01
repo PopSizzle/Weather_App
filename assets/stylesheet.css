@@ -1,0 +1,31 @@
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+  }
+  
+  .navbar .navbar-collapse {
+    text-align: center;
+  }
+
+  #searchBox {
+    position: fixed;
+    top: 100px;
+    display: inline-block;
+  }
+
+  #searchButton {
+    background-color: blue;
+    color: white;
+  }
+
+  .jumbotron {
+    display: inline-block;
+    position: fixed;
+    top: 100px;
+    left: 400px;
+  }
+
+  .dataBox {
+    padding: 10px;
+  }
