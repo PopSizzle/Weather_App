@@ -1,12 +1,12 @@
 var lat;
 var UVIndex;
 var lon;
-var history = [];
+var searchHist = [];
 
 function citySearch(event){
 
     var cityName = $("#cityInput").val().trim();
-
+    searchHist.push(cityName);
     var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=7fc7f03995684de46975fc5859c4770c"
 
     $.ajax({
@@ -71,13 +71,27 @@ function citySearch(event){
         
     })
 
+    renderHistory();
+    console.log(searchHist);
 }
 
-renderHistory(){
-
+function renderHistory(){
+    $("#histBox").empty();
+    for(i=(searchHist.length-1); i>-1; i--){
+        var newButton = $("<button>");
+        newButton.text(searchHist[i]);
+        newButton.addClass("histCell");
+        $("#histBox").append(newButton);
+    }
 }
 
 $("#searchButton").on("click", function(event){
     event.preventDefault();
+    event.stopPropagation();
     citySearch();
 });
+
+$(document).on("click", ".histCell", function(){
+    
+
+})
