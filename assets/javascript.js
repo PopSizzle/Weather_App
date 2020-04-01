@@ -4,9 +4,9 @@ var lon;
 var searchHist = [];
 var cityName;
 
-function citySearch(event){
+renderHistory()
 
-    searchHist.push(cityName);
+function citySearch(event){
 
     var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=7fc7f03995684de46975fc5859c4770c"
 
@@ -70,22 +70,30 @@ function citySearch(event){
 
         })
     })
+
+    localStorage.setItem("HistoryList", JSON.stringify(searchHist));
 }
 
 function renderHistory(){
     $("#histBox").empty();
-    for(i=(searchHist.length-1); i>-1; i--){
-        var newButton = $("<button>");
-        newButton.text(searchHist[i]);
-        newButton.addClass("histCell");
-        $("#histBox").append(newButton);
+    localHist = localStorage.getItem("HistoryList")
+    searchHist = JSON.parse(localHist);
+    if(searchHist){
+        for(i=(searchHist.length-1); i>-1; i--){
+            var newButton = $("<button>");
+            newButton.text(searchHist[i]);
+            newButton.addClass("histCell");
+            $("#histBox").append(newButton);
+        }
     }
+    else{searchHist = []};
 }
 
 $("#searchButton").on("click", function(event){
     event.preventDefault();
     event.stopPropagation();
     cityName = $("#cityInput").val().trim();
+    searchHist.push(cityName);
     citySearch();
     renderHistory();
 });
